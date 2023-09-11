@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simulador de Ruleta</title>
+    <script>
+        function simularTiradas() {
+            var resultados = document.getElementById("resultados");
+            resultados.innerHTML ="";        
+            for (var i = 1; i <= 10; i++) {
+                var vueltas = Math.floor(Math.random()*(37*10-37*5+1))+37*5;
+                var posicionFinal = Math.floor(vueltas%37);
+                var resultado = "Nro de Juego:"+i+"<br>";
+                resultado +="Valor Aleatorio:"+vueltas+"<br>";
+                resultado +="Nro que cayó en la ruleta: "+posicionFinal+"<br>";
+                resultado +="<br><br>";
+                resultados.innerHTML+=resultado;
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>Simulador de Ruleta</h1>
+    <button onclick="simularTiradas()">Simular</button>
+    <div id="resultados"></div>
+</body>
